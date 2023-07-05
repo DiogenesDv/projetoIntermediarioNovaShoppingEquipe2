@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box-menu{
+    grid-area: menu;
+    background-color: #848383;
+    width: 22vw;
+}
+
+.box-header{
+    grid-area: header;
+    background-color:#e0e0e0;
+    width: 80vw;
+}
+
+.box-section{
+    grid-area: section;
+    background-color:#f3f3f3;
+    width: 80vw;
+}
+/*
+.box-menu{
+    grid-area: menu;
+    background-color: #10c78a;
+    width: 78vw;
+}
+
+.item-footer{
+    grid-area: footer;
+    background:  linear-gradient(to right, #ae2896, #509bf5);
+    width: 100vw;
+}
+*/
+
+/***MENU****/
+.grid-container{
+    display: grid;
+    grid-template-areas:'menu menu menu menu '
+    'header section section section'
+    'header section section section';
+    gap: 0px;
+    padding: 0px;
+}
+
+.box-menu{
+    width: auto;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.box-usuario-funcao{
+    display: flex;
+    flex-direction: column;
+}
+.box-menu img{
+    width: 35px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+/***FIM - MENU****/
+
+
+/***HEADER****/
+
+.box-header{
+    width: auto;
+    height: 90vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.box-header button{
+    margin-top: 10px;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+    padding: 5px;
+}
+.logo-area img{
+    position: relative;
+    top: 42vh;
+    width: 200px;
+}
+
+/******FIM - HEADER***********/
+
+
+/*******SECÃO PRINCIPAL*************/
+.box-principal{
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #858585;
+}
+.box-tab{
+    overflow: auto;/**Cria a barra de rolagem diagonal, obs: tem quer aplicado o estilo em uma div antes da tab TABLE**/
+    width: auto;
+    height: 500px;
+    border: 2px solid #858585;
+}
+.tabela{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: auto;
+    border: 5px solid #dde;
+    background-color: #e3e3e3;
+}
+th, td{
+    text-align: left;
+    padding: 5px 20px 1px 12px;
+}
+.tr-linhas{
+    border-bottom:2px solid #c3c3c3;
+    border-left: 2px solid #c3c3c3;
+}
+tr:nth-child(even){
+    background-color: #c3c3c3;
+}
+td{
+
+    cursor: pointer;
+}
+
+.tabcontent{
+    display: none;
+}
+
