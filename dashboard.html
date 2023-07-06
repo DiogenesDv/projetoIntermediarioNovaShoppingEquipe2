@@ -51,7 +51,7 @@
                     <input type="text" name="buscaPorEntregador" id="BuscarEntregador">
 
 
-                    <button type="" name="BotaoDeBusca" id="botaoBuscar">Buscar</button>
+                    <button type="" name="BotaoDeBusca" id="botaoBuscar" class="box-botoes-buscar">Buscar</button>
 
                     <div class="logo-area">
                         <img src="assets/img/logo.png" alt="Logo">
@@ -77,19 +77,22 @@
                         <label for="horas" id="horas">Hs: xx:xx</label>
                         <label for="data" id="data">- Data: xx/xx/xx</label>
                     </div>
+                </div>
 
                     <div id="Pedidos" class="box-tab tabcontent">
 
-                        <fieldset>
+                        <fieldset class="tabela-ativa">
 
                             <legend>Pedidos</legend>
-                            
-                            <table class="tabela">
+
+                            <table class="tabela ">
 
                                 <thead>
                                     <tr class="tr-linhas">
-                                        <th>Data</th>
-                                        <th>Hora</th>
+                                        <th>Data/saida</th>
+                                        <th>Data/chegada</th>
+                                        <th>Hora/saida</th>
+                                        <th>Hora/chegada</th>
                                         <th>Prduto</th>
                                         <th>Status</th>
                                         <th>Descrição</th>
@@ -101,6 +104,8 @@
                                 <tbody>
                                     <tr class="tr-linhas">
                                         <td>01/07/2023</td>
+                                        <td>01/07/2023</td>
+                                        <td>16:37</td>
                                         <td>18:57</td>
                                         <td>Tv 32p</td>
                                         <td>Normal</td>
@@ -111,7 +116,9 @@
     
                                     <tr class="tr-linhas">
                                         <td>01/07/2023</td>
-                                        <td>19:01</td>
+                                        <td>01/07/2023</td>
+                                        <td>15:30</td>
+                                        <td>18:00</td>
                                         <td>SmartFone Tabajara 1tera ram 1tera rom</td>
                                         <td>Normal</td>
                                         <td>Celular SamartPhone super ultra Flash marca:Tabajara</td>
@@ -121,7 +128,9 @@
     
                                     <tr class="tr-linhas">
                                         <td>01/07/2023</td>
-                                        <td>19:20</td>
+                                        <td>01/07/2023</td>
+                                        <td>16:00</td>
+                                        <td>18:00</td>
                                         <td>Escudo do capitao america Original</td>
                                         <td>Radidao</td>
                                         <td>Escudo roubado da dos vingadores, marca:Tabajara</td>
@@ -131,7 +140,9 @@
     
                                     <tr class="tr-linhas">
                                         <td>02/07/2023</td>
-                                        <td>19:40</td>
+                                        <td>02/07/2023</td>
+                                        <td>16:37</td>
+                                        <td>18:55</td>
                                         <td>Cliptonita</td>
                                         <td>Radidao</td>
                                         <td>Pedra rara de Clipton, para retardar as força do homem de aço, marca:Tabajara</td>
@@ -141,12 +152,26 @@
     
                                     <tr class="tr-linhas">
                                         <td>02/07/2023</td>
+                                        <td>05/07/2023</td>
                                         <td>19:50</td>
+                                        <td>21:00</td>
                                         <td>Pedaço da Capa da roupa do Saitama</td>
-                                        <td>Radidao</td>
+                                        <td>normal</td>
                                         <td>Pedaço da Capa vermelha do One punch man, marca:Tabajara</td>
                                         <td>1</td>
                                         <td>The flash</td>
+                                    </tr>
+
+                                    <tr class="tr-linhas">
+                                        <td>02/07/2023</td>
+                                        <td>02/07/2023</td>
+                                        <td>16:37</td>
+                                        <td>18:55</td>
+                                        <td>Cliptonita</td>
+                                        <td>Radidao</td>
+                                        <td>Pedra rara de Clipton, para retardar as força do homem de aço, marca:Tabajara</td>
+                                        <td>1</td>
+                                        <td> The flash</td>
                                     </tr>
                                     
                                 </tbody>
@@ -157,7 +182,55 @@
                     </div>
 
                     <div id="Atrasados" class="box-tab tabcontent">
-                        <table>Tabela Atrasados</table>
+
+                        <fieldset class="tabela-ativa">
+
+                            <legend>Atrasados</legend>
+
+                            <table class="tabela">
+
+                                <thead>
+                                    <tr class="tr-linhas">
+                                        <th>Status</th>
+                                        <th>Data/saida</th>
+                                        <th>Data/chegada</th>
+                                        <th>Hora/saida</th>
+                                        <th>Hora prevista de chegada</th>
+                                        <th>Prduto</th>
+                                        <th>Descrição</th>
+                                        <th>Qtd</th>
+                                        <th>Entregador</th>
+                                    </tr>   
+                                </thead>
+    
+                                <tbody>
+                                    <tr class="tr-linhas">
+                                        <td style="color: red;">ATRASADO</td>
+                                        <td>01/07/2023</td>
+                                        <td>01/07/2023</td>
+                                        <td>16:37</td>
+                                        <td style="color: red;">18:57</td><!--Se estiver passado da hora ou data, fica vermelho-->
+                                        <td>Tv 32p</td>
+                                        <td>Tv Smart 32 polegadas ultra fina marca:Tabajara</td>
+                                        <td>1</td>
+                                        <td> Zé zero vinte quatro</td>
+                                    </tr>
+
+                                    <tr class="tr-linhas">
+                                        <td style="color: red;">ATRASADO</td>
+                                        <td>01/07/2023</td>
+                                        <td>01/07/2023</td>
+                                        <td>16:37</td>
+                                        <td style="color: red;">18:57</td>
+                                        <td>Tv 32p</td>
+                                        <td>Tv Smart 32 polegadas ultra fina marca:Tabajara</td>
+                                        <td>1</td>
+                                        <td> Zé zero vinte quatro</td>
+                                    </tr>
+
+                            </table>
+                        </fieldset>
+                        
                     </div>
 
                     <div id="Urgencias" class="box-tab tabcontent">
@@ -172,16 +245,11 @@
                         <table>Tabela Estoque</table>
                     </div>
 
-                    <br>
-
                     <div>
-                        <button>Novo Pedido</button>
-                        <button>Novo Estoque</button>
+                        <button class="box-botoes">NOVO PEDIDO</button>
+                        <button class="box-botoes cor-botao-estoque">NOVO ESTOQUE</button>
                     </div>
-
-                </div>
             </section>
-
         </div>
     </main>
     
