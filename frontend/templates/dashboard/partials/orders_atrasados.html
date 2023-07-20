@@ -1,0 +1,34 @@
+<div id="Atrasados" class="box-tab tabcontent">
+    <fieldset class="tabela-ativa">
+        <legend>Atrasados</legend>
+        <table class="tabela">
+            <thead>
+                <tr class="tr-linhas">
+                    <th>Status</th>
+                    <th>Pedido feito</th>
+                    <th>Data/chegada</th>
+                    <th>Hora/saida</th>
+                    <th>Hora prevista de chegada</th>
+                    <th>Produto</th>
+                    <th>Descrição</th>
+                    <th>Qtd</th>
+                    <th>Entregador</th>
+                </tr>   
+            </thead>
+            <tbody>
+                {% for order in orders_atrasados %}
+                    <tr class="tr-linhas">
+                        <td style="color: red;">ATRASADO</td>
+                        <td>{{ order.created_at }}</td>
+                        <td>01/07/2023</td>
+                        <td>16:37</td>
+                        <td style="color: red;">18:57</td>
+                        <td>{{ order.product }}</td>
+                        <td>{{ order.description }}</td>
+                        <td>{{ order.product.quantity }}</td>
+                        <td>{{ order.deliveryman }}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+    </fieldset>
+</div>

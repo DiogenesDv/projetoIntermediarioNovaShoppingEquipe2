@@ -1,0 +1,15 @@
+{% load static %}
+
+<header class="box-menu">
+    <div class="box-usuario-funcao">
+        <a href="{% url 'authenticate:login_admin' %}" style="font-size: 14px; padding-top: 2px;"> << Voltar tela Login</a>
+        <span>Usuário: <label id="usuarioNome">{{ user }}</label></span>
+    </div>
+    <div class="box-titulo-painel">
+        <h2>Painel de Pedidos</h2>
+    </div>
+    <div class="box-botoes-notif-sair">
+        <img src="{% static 'imgs/notification-svgrepo-com.svg' %}" alt="Notificação" id="BotaoNotificacao">
+        <img src="{% static 'imgs/exit-door-run-escape-svgrepo-com.svg' %}" alt="Sair" id="BotaoSair">
+    </div>
+</header>
