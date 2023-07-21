@@ -1,0 +1,69 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+
+{% block head_configs %}
+    {% include 'dashboard/partials/head.html' %}
+{% endblock %}
+
+
+{% block page_title %}Dashboard{% endblock %}
+
+
+{% block content %}
+    <main>
+        <div class="grid-container">
+            {% include 'dashboard/partials/header.html' %}
+            <section class="box-lateral-esquerda">
+                <div class="box-header">
+                    <h3>Pesquisa por:</h3>
+                    <form method="get">
+                        <label for="id">ID:</label>
+                        <input type="text" name="orderid" id="BuscarId">
+
+                        <label for="entregador">Entregador:</label>
+                        <input type="text" name="deliveryman" id="BuscarEntregador">
+
+
+                        <button type="" name="BotaoDeBusca" id="botaoBuscar" class="box-botoes-buscar">Buscar</button>
+                    </form>
+                    <div class="logo-area">
+                        <img src="{% static 'imgs/logo.png' %}" alt="Logo">
+                    </div>
+                </div>
+            </section>
+            <section class="box-principal box-section">
+                <div class="box-secoes">
+                </div>
+                <div class="botoes-NovoPed-NovoEst">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'Pedidos')">Pedidos</button>
+                        <button class="tablinks" onclick="openCity(event, 'Atrasados')">Atrasados</button>
+                        <button class="tablinks" onclick="openCity(event, 'Urgencias')">Urgências</button>
+                        <button class="tablinks" onclick="openCity(event, 'Entregas')">Entregas</button>
+                        <button class="tablinks" onclick="openCity(event, 'Estoque')">Estoque</button>
+
+                        <label for="horas" id="horas">Hs: xx:xx</label>
+                        <label for="data" id="data">- Data: xx/xx/xx</label>
+                    </div>
+                </div>
+                {% include 'dashboard/partials/orders.html' %}
+                {% include 'dashboard/partials/orders_atrasados.html' %}
+
+                    <div id="Urgencias" class="box-tab tabcontent">
+                        <table>Tabela Urgências</table>
+                    </div>
+                    <div id="Entregas" class="box-tab tabcontent">
+                        <table>Tabela Entregas</table>
+                    </div>
+                    <div id="Estoque" class="box-tab tabcontent">
+                        <table>Tabela Estoque</table>
+                    </div>
+                    <div>
+                        <button class="box-botoes">NOVO PEDIDO</button>
+                        <button class="box-botoes cor-botao-estoque">NOVO ESTOQUE</button>
+                    </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

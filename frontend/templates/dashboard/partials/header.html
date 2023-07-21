@@ -1,0 +1,14 @@
+{% load static %}
+
+<header class="box-menu">
+    <div class="box-usuario-funcao">
+        <span>Usuário: <label id="usuarioNome">{{ user }}</label></span>
+    </div>
+    <div class="box-titulo-painel">
+        <h2>Painel de Pedidos</h2>
+    </div>
+    <div class="box-botoes-notif-sair">
+        <img src="{% static 'imgs/notification-svgrepo-com.svg' %}" alt="Notificação" id="BotaoNotificacao">
+        <a href="{% url 'authenticate:login_admin' %}"><img src="{% static 'imgs/exit-door-run-escape-svgrepo-com.svg' %}" alt="Sair" id="BotaoSair"></a>
+    </div>
+</header>

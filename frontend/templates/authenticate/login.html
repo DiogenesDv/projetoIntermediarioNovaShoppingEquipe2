@@ -1,0 +1,29 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+
+{% block head_configs %}
+    {% include 'authenticate/head.html' %}
+{% endblock %}
+
+
+{% block page_title %}Login{% endblock %}
+
+
+{% block content %}
+    <main>
+        <div class="container">
+            <div class="logo-area">
+                <img src="{% static 'imgs/logo.png' %}">
+            </div>
+            <div class="form-area">
+                <div class="form-title">
+                    <h2>LOGIN - ADM </h2> 
+                </div>
+                <div>
+                    {% include 'authenticate/forms/login_form.html' %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,35 @@
+<div id="Pedidos" class="box-tab tabcontent">
+    <fieldset class="tabela-ativa">
+        <legend>Pedidos</legend>
+        <table class="tabela ">
+            <thead>
+                <tr class="tr-linhas">
+                    <th>Pedido feito</th>
+                    <th>Data/chegada</th>
+                    <th>Hora/saida</th>
+                    <th>Hora/chegada</th>
+                    <th>Produto</th>
+                    <th>Status</th>
+                    <th>Descrição</th>
+                    <th>Qtd</th>
+                    <th>Entregador</th>
+                </tr>   
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr class="tr-linhas">
+                        <td>{{ order.created_at }}</td>
+                        <td>01/07/2023</td>
+                        <td>16:37</td>
+                        <td>18:57</td>
+                        <td>{{ order }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.description }}</td>
+                        <td>{{ order.product.quantity }}</td>
+                        <td>{{ order.deliveryman }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </fieldset>
+</div>

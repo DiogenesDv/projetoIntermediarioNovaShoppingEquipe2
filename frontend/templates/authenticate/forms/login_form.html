@@ -1,0 +1,25 @@
+{% load static %}
+<form method="post">
+    <div class="form-items">
+        <div class="box">
+            {% csrf_token %}
+            <div class="input-wapper">
+                <input type="text" class="input-field" name="username" id="username" placeholder="Digite seu username">
+                <label for="username" class="input-label">Username:</label>              
+            </div>
+            <div class="input-wapper"> 
+                <input type="password" class="input-field input-field-password" name="password" id="password" placeholder="Digite sua Senha">
+                <label for="password" class="input-label">Senha:</label>
+                <img src="{% static 'imgs/eye-off-svgrepo-com.svg' %}" alt="ico olho" class="input-icon">
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="form-submit-button">
+                <button name="acessar" type="submit" method="">Acessar</button>
+            </div>  
+            <div class="reset-password">
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
+        </div>
+    </div>
+</form>
