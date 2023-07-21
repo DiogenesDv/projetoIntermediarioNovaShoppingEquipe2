@@ -4,5 +4,5 @@ from authenticate import views
 app_name = 'authenticate'
 
 urlpatterns = [
-    path('admin-login/', views.login_view, name='login')
+    path('admin-login/', views.login_view, name='login_admin')
 ]

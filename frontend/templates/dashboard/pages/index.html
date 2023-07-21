@@ -17,21 +17,16 @@
             <section class="box-lateral-esquerda">
                 <div class="box-header">
                     <h3>Pesquisa por:</h3>
+                    <form method="get">
+                        <label for="id">ID:</label>
+                        <input type="text" name="orderid" id="BuscarId">
 
-                    <label for="id">ID:</label>
-                    <input type="text" name="buscaPorId" id="BuscarId">
-
-                    <label for="data">Data:</label>
-                    <input type="date" name="buscaPorData" id="BuscarData">
-
-                    <label for="hora">Horas:</label>
-                    <input type="datetime" name="buscaPorHora" id="BuscarHora">
-
-                    <label for="entregador">Entregador:</label>
-                    <input type="text" name="buscaPorEntregador" id="BuscarEntregador">
+                        <label for="entregador">Entregador:</label>
+                        <input type="text" name="deliveryman" id="BuscarEntregador">
 
 
-                    <button type="" name="BotaoDeBusca" id="botaoBuscar" class="box-botoes-buscar">Buscar</button>
+                        <button type="" name="BotaoDeBusca" id="botaoBuscar" class="box-botoes-buscar">Buscar</button>
+                    </form>
                     <div class="logo-area">
                         <img src="{% static 'imgs/logo.png' %}" alt="Logo">
                     </div>

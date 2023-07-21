@@ -1,0 +1,71 @@
+{% extends 'global/base.html' %}
+{% load static %}
+
+
+{% block head_configs %}
+    {% include 'dashboard/partials/head.html' %}
+{% endblock %}
+
+
+{% block page_title %}Dashboard{% endblock %}
+
+
+{% block content %}
+<main>
+    <div class="grid-container">
+        {% include 'dashboard/partials/header.html' %}
+        <section class="box-lateral-esquerda">
+            <div class="box-header">
+                <h3>Pesquisa por:</h3>
+                <form action="{% url 'dashboard:search' %}" method="get">
+                    <label for="id">ID:</label>
+                    <input type="text" name="orderid" id="BuscarId">
+
+                    <label for="entregador">Entregador:</label>
+                    <input type="text" name="deliveryman" id="BuscarEntregador">
+
+
+                    <button type="submit" id="botaoBuscar" class="box-botoes-buscar">Buscar</button>
+                </form>
+                <div class="logo-area">
+                    <img src="{% static 'imgs/logo.png' %}" alt="Logo">
+                </div>
+            </div>
+        </section>
+        <section class="box-principal box-section">
+            <table class="tabela ">
+                <thead>
+                    <tr class="tr-linhas">
+                        <th>Pedido feito</th>
+                        <th>Data/chegada</th>
+                        <th>Hora/saida</th>
+                        <th>Hora/chegada</th>
+                        <th>Produto</th>
+                        <th>Status</th>
+                        <th>Descrição</th>
+                        <th>Qtd</th>
+                        <th>Entregador</th>
+                    </tr>   
+                </thead>
+                <tbody>
+                    <tr class="tr-linhas">
+                        <td>{{ order.created_at }}</td>
+                        <td>01/07/2023</td>
+                        <td>16:37</td>
+                        <td>18:57</td>
+                        <td>{{ order }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.description }}</td>
+                        <td>{{ order.product.quantity }}</td>
+                        <td>{{ order.deliveryman }}</td>
+                    </tr>
+                </tbody>
+            </table>
+                <div>
+                    <button class="box-botoes">NOVO PEDIDO</button>
+                    <button class="box-botoes cor-botao-estoque">NOVO ESTOQUE</button>
+                </div>
+        </section>
+    </div>
+</main>
+{% endblock %}
